@@ -13,6 +13,30 @@ pub mod adamm {
 
     pub fn init_user(ctx: Context<InitUser>,name:String,profile::String) --> Result<()>  {   // init user wallet address 
 
-        
+         
     } 
+}
+
+// accounts
+#[derive(Accounts)]
+#[instruction(program)]
+pub struct InitUser<'info> { 
+
+    #[account(
+
+        init,
+        seeds = [USER_SEED, authority.key().as_ref()], // program address
+        bump,
+        payer = authority,//
+        space =8            
+    )]
+
+    pub  users_account: Account<'info,UserAccount>,
+
+
+    #[account]
+    pub authority: Signer<'info>,
+    
+
+
 }
