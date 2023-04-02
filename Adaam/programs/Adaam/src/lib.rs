@@ -19,7 +19,7 @@ pub mod adamm {
 
 // accounts
 #[derive(Accounts)]
-#[instruction(program)]
+#[instruction()]
 pub struct InitUser<'info> { 
 
     #[account(
@@ -28,15 +28,15 @@ pub struct InitUser<'info> {
         seeds = [USER_SEED, authority.key().as_ref()], // program address
         bump,
         payer = authority,//
-        space =8            
+        space = 2312 + 8
     )]
 
     pub  users_account: Account<'info,UserAccount>,
 
 
-    #[account]
+    #[account(mut)]
     pub authority: Signer<'info>,
-    
 
+    pub system_program: Program<'info, System>,
 
 }
