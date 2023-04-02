@@ -34,6 +34,7 @@ pub struct InitUser<'info> {
     pub  users_account: Account<'info,UserAccount>,
 
 
+
     #[account(mut)]
     pub authority: Signer<'info>,
 
