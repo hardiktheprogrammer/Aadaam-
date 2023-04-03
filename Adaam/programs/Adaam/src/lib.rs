@@ -11,7 +11,15 @@ pub mod adamm {
 
     use super::*;
 
-    pub fn init_user(ctx: Context<InitUser>,name:String,profile::String) --> Result<()>  {   // init user wallet address 
+    pub fn init_user(ctx: Context<InitUser>,name:String,profile::String) --> Result<()>  {   // init user wallet address
+
+        // let user_account = &mut
+        // let user = Lance
+        // user = David 
+
+        let user_account = &mut
+
+        let user = len
 
          
     } 
@@ -31,7 +39,7 @@ pub struct InitUser<'info> {
         space = 2312 + 8
     )]
 
-    pub  users_account: Account<'info,UserAccount>,
+    pub  users_account: Account<'info,Users Account>,
 
 
 
