@@ -17,9 +17,15 @@ pub mod adamm {
         // let user = Lance
         // user = David 
 
-        let user_account = &mut
+        let user_account = &mut ctx.account.user_account;
+        let authority = &mut ctx.account.authority;
 
-        let user = len
+// logic for getting users
+        user_account.name = name;
+        user_account.profile = profile;
+        user_account.last_post_id = 0;
+        user_account.post_count = 0;
+
 
          
     } 
