@@ -26,7 +26,7 @@ pub mod adamm {
         user_account.last_post_id = 0;
         user_account.post_count = 0;
 
-
+        Ok(())
          
     } 
 }
@@ -45,7 +45,7 @@ pub struct InitUser<'info> {
         space = 2312 + 8
     )]
 
-    pub  users_account: Account<'info,Users Account>,
+    pub  users_account: Account<'info,UsersAccount>,
 
 
 

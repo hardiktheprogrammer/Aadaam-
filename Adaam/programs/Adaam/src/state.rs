@@ -11,8 +11,8 @@ pub struct UsersAccount {
     pub post_count: u8,
 }
 
-// let user = {
+/* let user =
 //     name:
 //     profile:
 
-// }
+*/
