@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
-#[constants]
+#[constant]
 pub const USER_SEED: &[u8] = b"user";
 
-#[constants]
-pub const POST_seed: &[u8] = b"post";
+#[constant]
+pub const POST_SEED: &[u8] = b"post";
