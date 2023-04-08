@@ -8,5 +8,12 @@ pub struct UserAccount {
     pub authority: PubKey, //32
     pub last_post_id: u8,  //1
     pub post_count: u8,
-    pub authority: u8;
+    // pub authority: u8;
+}
+pub struct PostAccount {
+    pub id: u8,
+    pub title: String,     //
+    pub user: PubKey,      //
+    pub authority: PubKey, //
+    pub 
 }

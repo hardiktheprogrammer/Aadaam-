@@ -29,7 +29,11 @@ pub mod adamm {
         Ok(())
     }
 
-    pub fn create_post(ctx: Context<CreatePost>, title: String, content: String) -> Result<()> {}
+    pub fn create_post(ctx: Context<CreatePost>, title: String, content: String) -> Result<()> {
+
+
+        
+    }
 }
 
 // accounts
@@ -57,10 +61,13 @@ pub struct InitUser<'info> {
 
 pub struct CreatePost<'info> {
     #[account(
-        
-        
         init,
-        seeds = [POST_SEED, authority.key().as_ref(),]
+        seeds = [POST_SEED, authority.key().as_ref(),&[user_account.last_post_id as u8 ].as_ref()],
+        bump,   
+        payer = authority,
+        space = 2376 + 8 
+        
+        
     )]
     pub post_account: Account<'info, PostAccount>,
 }
