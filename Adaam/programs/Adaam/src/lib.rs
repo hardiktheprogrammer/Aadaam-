@@ -30,7 +30,7 @@ pub mod adamm {
     }
 
     pub fn create_post(ctx: Context<CreatePost>, title: String, content: String) -> Result<()> {
-
+        let post = 
 
         
     }
@@ -74,5 +74,18 @@ pub struct CreatePost<'info> {
     #[account(
 
         mut,
+        seeds = [USER_SEED, authorized.key().as.ref()],
+        bump,
+        has_one = authority 
+
+
     )]
+
+    pub user_account: Account<'info,UserAccount>,
+
+    #[account(mut)]
+    pub authority: Signer<'info>,
+
+    pub system_program: Program<'info, System>,
+
 }
