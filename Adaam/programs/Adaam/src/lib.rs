@@ -70,4 +70,9 @@ pub struct CreatePost<'info> {
         
     )]
     pub post_account: Account<'info, PostAccount>,
+
+    #[account(
+
+        mut,
+    )]
 }

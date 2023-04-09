@@ -15,5 +15,5 @@ pub struct PostAccount {
     pub title: String,     //
     pub user: PubKey,      //
     pub authority: PubKey, //
-    pub 
+    pub authoriy: Pubkey,  //
 }
