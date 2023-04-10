@@ -30,7 +30,9 @@ pub mod adamm {
     }
 
     pub fn create_post(ctx: Context<CreatePost>, title: String, content: String) -> Result<()> {
-        let post = 
+        let post_account = ctx.accounts.post_account;
+        let user_account = ctx.accounts.user_account;
+        
 
         
     }
