@@ -33,10 +33,15 @@ pub mod adamm {
         let post_account = ctx.accounts.post_account;
         let user_account = ctx.accounts.user_account;
         let authority = ctx.accounts.authority;
-        
-        
 
-        
+       post_account.id = user_account.last_post_id;
+       post_account.title = title;
+       post_account.content = content
+       post_account.user = user_account.key(); 
+       post_account.authority = authority.key();
+
+       user_account.last_post_id = user_account.last_post_id;
+           .checked
     }
 }
 
