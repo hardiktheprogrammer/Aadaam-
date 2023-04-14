@@ -30,8 +30,8 @@ pub mod adamm {
     }
 
     pub fn create_post(ctx: Context<CreatePost>, title: String, content: String) -> Result<()> {
-        let post_account = ctx.accounts.post_account;
-        let user_account = ctx.accounts.user_account;
+        let post_account = &mut.accounts.post_account;
+        let user_account = &mut.accounts.user_account;
         let authority = ctx.accounts.authority;
 
        post_account.id = user_account.last_post_id;
@@ -39,9 +39,14 @@ pub mod adamm {
        post_account.content = content
        post_account.user = user_account.key(); 
        post_account.authority = authority.key();
+// 
+
 
        user_account.last_post_id = user_account.last_post_id;
-           .checked
+           .checked_add(1)
+           .unwrap();
+
+        user_account.post_count = post_account.post_count;
     }
 }
 

@@ -10,6 +10,8 @@ pub struct UserAccount {
     pub post_count: u8,
     // pub authority: u8;
 }
+#[account]
+#[derive(Default)]
 pub struct PostAccount {
     pub id: u8,
     pub title: String,     //
